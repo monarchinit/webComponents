@@ -18,6 +18,9 @@ export namespace Components {
   }
   interface AppRoot {}
   interface CustomClock {}
+  interface FormAddContact {
+    'fetchAddItem': { AddItem: Function };
+  }
   interface MyFirstComponent {}
 }
 
@@ -48,6 +51,12 @@ declare global {
     new (): HTMLCustomClockElement;
   };
 
+  interface HTMLFormAddContactElement extends Components.FormAddContact, HTMLStencilElement {}
+  var HTMLFormAddContactElement: {
+    prototype: HTMLFormAddContactElement;
+    new (): HTMLFormAddContactElement;
+  };
+
   interface HTMLMyFirstComponentElement extends Components.MyFirstComponent, HTMLStencilElement {}
   var HTMLMyFirstComponentElement: {
     prototype: HTMLMyFirstComponentElement;
@@ -58,6 +67,7 @@ declare global {
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
     'custom-clock': HTMLCustomClockElement;
+    'form-add-contact': HTMLFormAddContactElement;
     'my-first-component': HTMLMyFirstComponentElement;
   }
 }
@@ -69,6 +79,9 @@ declare namespace LocalJSX {
   }
   interface AppRoot {}
   interface CustomClock {}
+  interface FormAddContact {
+    'fetchAddItem'?: { AddItem: Function };
+  }
   interface MyFirstComponent {}
 
   interface IntrinsicElements {
@@ -76,6 +89,7 @@ declare namespace LocalJSX {
     'app-profile': AppProfile;
     'app-root': AppRoot;
     'custom-clock': CustomClock;
+    'form-add-contact': FormAddContact;
     'my-first-component': MyFirstComponent;
   }
 }
@@ -90,6 +104,7 @@ declare module "@stencil/core" {
       'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
       'custom-clock': LocalJSX.CustomClock & JSXBase.HTMLAttributes<HTMLCustomClockElement>;
+      'form-add-contact': LocalJSX.FormAddContact & JSXBase.HTMLAttributes<HTMLFormAddContactElement>;
       'my-first-component': LocalJSX.MyFirstComponent & JSXBase.HTMLAttributes<HTMLMyFirstComponentElement>;
     }
   }
