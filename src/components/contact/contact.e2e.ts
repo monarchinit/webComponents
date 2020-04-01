@@ -1,11 +1,11 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('custom-clok', () => {
+describe('list-contact', () => {
   it('renders', async () => {
     const page = await newE2EPage();
-    await page.setContent('<custom-clok></custom-clok>');
+    await page.setContent('<list-contact></list-contact>');
 
-    const element = await page.find('custom-clok');
+    const element = await page.find('list-contact');
     expect(element).toHaveClass('hydrated');
   });
 });

@@ -7,11 +7,11 @@ import { Component, h, State, Prop } from "@stencil/core";
 })
 export class AddContact {
   @State() state: { name: string; number: string } = {
-    name: null,
-    number: null
+    name: "",
+    number: ""
   };
 
-  @Prop({ reflect: true }) fetchAddItem: { AddItem: Function };
+  @Prop() fetchAddItem: { AddItem: Function };
 
   handleSubmit = async e => {
     e.preventDefault();

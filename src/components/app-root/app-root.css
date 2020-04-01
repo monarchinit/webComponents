@@ -1,16 +1,28 @@
 header {
-  background: #5851ff;
-  color: white;
-  height: 56px;
+  color: #5851ff;
+  height: 10vw;
   display: flex;
   align-items: center;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 h1 {
-  font-size: 1.4rem;
+  font-size: 200%;
   font-weight: 500;
-  color: #fff;
+  color: #5851ff;
   padding: 0 12px;
   text-transform: uppercase;
+}
+
+@media screen and (min-width: 460px) {
+  header {
+    height: 5vw;
+  }
+
+  h1 {
+    font-size: 100%;
+    font-weight: 500;
+    color: #5851ff;
+    padding: 0 12px;
+    text-transform: uppercase;
+  }
 }
